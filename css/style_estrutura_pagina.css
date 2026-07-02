@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Montenegrin+Gothic+One&display=swap');
+
+
+/*DEFINE AS CONFIGURAÇÕES EM TODOS ELEMENTO DA PÁGINA*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: montenegrim gothic one;
+}
+
+/*CRIANDO VARIÁVEIS*/
+:root{
+    --cor01: #e8ebe5b4;
+    --cor02: #058dc7;
+    --cor03: #eee38f;
+    --branca: #ffffff;
+}
+
+/*FORMATANDO A TAG main PELO ID geral*/
+#geral{
+    margin: 20px;
+}
+
+/*FORMATANDO O CABEÇALHO*/
+#cabeçalho{
+    background-color: #e9c37d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    height: 60px;
+}
+
+/*CONFIGURANDO MENU NA HORIZONTAL*/
+#menu ul{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+#menu ul img{
+    width: 25px;
+    height: 25px;
+}
