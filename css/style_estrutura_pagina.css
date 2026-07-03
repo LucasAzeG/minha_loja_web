@@ -22,9 +22,8 @@
     margin: 20px;
 }
 
-/*FORMATANDO O CABEÇALHO*/
-#cabeçalho{
-    background-color: #e9c37d;
+/*FORMATANDO O CEBEÇALHO*/
+#cabecalho{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,12 +31,14 @@
     height: 60px;
 }
 
+
 /*CONFIGURANDO MENU NA HORIZONTAL*/
 #menu ul{
     display: flex;
     gap: 30px;
     list-style: none;
 }
+
 
 #menu ul img{
     width: 25px;
