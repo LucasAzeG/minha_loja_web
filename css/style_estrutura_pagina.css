@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montenegrin+Gothic+One&display=swap');
 
-
 /*DEFINE AS CONFIGURAÇÕES EM TODOS ELEMENTO DA PÁGINA*/
 *{
     margin: 0px;
@@ -28,7 +27,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0px 20px;
-    height: 60px;
+    height: 100px;
 }
 
 
@@ -39,8 +38,31 @@
     list-style: none;
 }
 
-
 #menu ul img{
     width: 25px;
     height: 25px;
+}
+
+/*FORMATANDO SECTION pesquisa*/
+#pesquisa{
+    height: 200px;
+    background-color: var(--cor01);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pesquisa input{
+    width: 650px;
+    height: 80px;
+    background-color: var(--branca);
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1.3em;
+}
+
+#pesquisa input::placeholder{
+    font-size: 1.3em;
+    font-style: italic;
+    color: var(--cor02);
 }
