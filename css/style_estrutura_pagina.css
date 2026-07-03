@@ -19,14 +19,20 @@
 /*FORMATANDO A TAG main PELO ID geral*/
 #geral{
     margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 /*FORMATANDO O CEBEÇALHO*/
 #cabecalho{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 20px;
+    padding: 20px 60px;
     height: 100px;
 }
 
@@ -45,6 +51,7 @@
 
 /*FORMATANDO SECTION pesquisa*/
 #pesquisa{
+    width: 100%;
     height: 200px;
     background-color: var(--cor01);
     display: flex;
@@ -58,7 +65,7 @@
     background-color: var(--branca);
     border-radius: 8px;
     padding: 10px;
-    font-size: 1.3em;
+    font-size: 1.4em;
     color: var(--cor02);
 }
 
@@ -74,6 +81,8 @@
     grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
     gap: 20px;
     margin: 20px 0px;
+    width: 1000px;
+    min-height: 800px;
 }
 
 .card{
@@ -86,9 +95,15 @@
     justify-content: center;
     border: 1px solid var(--cor02);
     border-radius: 8px;
+    cursor: pointer;
 }
 
-.card img{
+.card:hover{
+    transform: translateY(-5px);
+}
+
+.card
+ img{
     width: 150px;
     height: 200px;
     margin: 10px 0px;
@@ -116,4 +131,36 @@
     color: var(--cor02);
     font-weight: bold;
     cursor: pointer;
+}
+
+/*FORATAR O RODAPÉ*/
+
+#rodape{
+    width: 100%;
+    height: 180px;
+    background-color: var(--cor02);
+    margin: 20px 0px;
+    padding: 10px;
+    color: var(--branca);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*FORMATANDO LINKS*/
+#menu a:link{
+    font-size: 1.4em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: var(--cor02);
+}
+
+#menu a:visited{
+    font-size: 1.4em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: var(--cor03);
 }
