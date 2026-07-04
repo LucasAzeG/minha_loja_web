@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Loja Virtual</title>
+
+    <link rel="stylesheet" href="../css/style_cadastro.css">
+</head>
+<body>
+    <main id="geral">
+        <header id="cabecalho">
+            <div id="logo">
+                Santuário do Dragão
+            </div>
+
+            <nav id="menu">
+                <ul>
+                    <li><a href="../index.html">HOME</a></li>
+                    <li><a href="paginas/sobre.html">Sobre</a></li>
+                    <li><a href="paginas/login.html">Login</a></li>
+                    <li><a href="paginas/carrinho.html"><img src="../imagens/imagem_21.jpg" alt="Carrinho"></a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="cadastro_dados">
+            <h2>CADASTRE SEUS DADOS PESSOAIS</h2>
+        </section>
+
+        <section id="div-form">
+            <div class="card">
+                
+                <form name="form" id="form" method="post"></form>
+                
+                  <label for="nome">Nome*</label>
+                  <input type="text" name="nome" id="nome" class="input-nome"  maxlength="30" required placeholder="Digite o nome">
+
+                  <label for="sobrenome">Sobrenome*</label>
+                  <input type="text" name="sobrenome" id="sobrenome" class="input-sobrenome"  maxlength="30" required placeholder="Digite o sobrenome">
+
+                  <label for="cpf">CPF*</label>
+                  <input type="number" name="cpf" id="cpf" class="input-cpf"  maxlength="14" required placeholder="Digite o telefone">
+
+                  <label for="telefone">Telefone*</label>
+                  <input type="number" name="telefone" id="telefone" class="input-telefone"  maxlength="13" required placeholder="Digite o CPF">
+
+                  <label for="email">Email*</label>
+                  <input type="text" name="email" id="email" class="input-email"  maxlength="255" required placeholder="Digite o Email">
+
+                  <label for="datanascimento">Data Nascimento</label>
+                  <input type="date" name="datanascimento" id="datanascimento" class="input-datadenascimeno" required>
+  
+                  <label for="lagradouro">Lagradouro*</label>
+                  <input type="text" name="lagradouro" id="lagradouro" class="input-lagradouro"  required placeholder="Digite o lagradouro">
+
+                  <label for="numero">Número*</label>
+                  <input type="number" name="numero" id="numero" class="input-numero"  maxlength="5" required placeholder="Informe o número">
+
+                  <label for="complemento">complemento*</label>
+                  <input type="text" name="complemento" id="complemento" class="input-complemento"  required placeholder="Digite o complemento">
+
+                  <label for="bairro">Bairro*</label>
+                  <input type="text" name="bairro" id="bairro" class="input-bairro"  required placeholder="Digite o bairro">
+
+                  <label for="cidade">Cidade*</label>
+                  <input type="text" name="cidade" id="cidade" class="input-cidade"  required placeholder="Digite a cidade">
+
+                  <label for="estado">Estado</label>
+                  <select name="estado" id="estado" class="input-estado">
+                  <option>Selecione um Estado</option>
+                  <option value="Al">Alagoas</option>
+                  <option value="Ba">Bahia</option>
+                  <option value="Ce">Ceará</option>
+                  <option value="Ma">Maranhão</option>
+                  <option value="Pb">Paraíba</option>
+                  <option value="Pe">Pernambuco</option>
+                  <option value="Pi">Piauí</option>
+                  <option value="RN">Rio Grande do Norte</option>
+                  <option value="Se">Sergipe</option>
+
+                  <label for="senha">Senha</label>
+                  <input type="password" name="senha" id="senha" class="input-senha" maxlength="6" required placeholder="Digite a senha">
+
+                  <label for="ofertas">Deseja receber nossas ofertas pelo email e pelo Whatsapp?</label>
+                  <input type="radio" name="ofertas" id="ofertas" class="input-op" value="O">
+                
+                  <div id="div-btns">
+                      <button type="submit" id="btn-enviar">Enviar</button>
+                      <button type="reset" id="btn-limpar">Limpar</button>
+                  </div>
+                </form>
+
+            </div>
+
+        </section>
+
+
+<footer id="rodape">
+    <h2>&copy 2026 Santuário do Dragão S.A. Todos os Direitos reservados</h2>
+    <p>Formas de pagamento: Pix, Cartões de Débito e Crédito</p>
+</footer>
+
+
+    </main>
+    
+</body>
+</html>
