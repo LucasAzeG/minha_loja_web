@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Montenegrin+Gothic+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
 
 /*DEFINE AS CONFIGURAÇÕES EM TODOS ELEMENTO DA PÁGINA*/
 *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: montenegrim gothic one;
+    font-family: MedievalSharp;
 }
 
 /*CRIANDO VARIÁVEIS*/
@@ -164,3 +164,4 @@
     text-decoration: none;
     color: var(--cor03);
 }
+
