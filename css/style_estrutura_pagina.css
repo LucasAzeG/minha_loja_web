@@ -165,3 +165,10 @@
     color: var(--cor03);
 }
 
+
+p {
+    text-align: center;
+    line-height: 0px;
+    color: #000000;
+    line-height: 1.5;
+}
