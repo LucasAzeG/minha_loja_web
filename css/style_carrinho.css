@@ -81,3 +81,124 @@
     color: var(--cor03);
 }
 
+/*FORMATANDO SECTION CARRINHO*/
+#carrinho{
+    width: 1000px;
+    min-height: 600px;
+    margin: 20px 0px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/*FORMATANDO A SECTION itens-carrinho*/
+.item{
+    width: 100%;
+    height: 120px;
+    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--cor03);
+    border-bottom: 1px solid var(--cor02);
+}
+
+.img-item img{
+    width: 100px;
+    height: 100px;
+}
+
+.descricoes-itens{
+    width: 600px;
+    height: 120px;
+    margin: 20px 0px;
+}
+
+.descricao{
+    width: 100%;
+    height: 40px;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: bold;
+    padding: 15px;
+}
+
+.valores{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.input-item{
+    width: 45px;
+    text-align: center;
+    border: 1px solid var(--cor02);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+
+.img-remover img{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+/*FORMATANDO A DIV VALORES-CARRINHO*/
+#valores-carrinho{
+    width: 30%;
+    height: 600px;
+    margin: 0px 10px;
+    padding: 15px;
+}
+
+#div-cep, #div-calc-valor, #div-calc-valor-pagar{
+    width: 100%;
+    min-height: 80px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--cor02);
+    border-radius: 8px;
+}
+
+.titulo-valores-carrinho{
+    margin: 20px;
+    text-transform: uppercase;
+    background-color: var(--cor03);
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    color: var(--branca);
+}
+
+.valor{
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.btn-carrinho{
+    width: 280px;
+    height: 80px;
+    margin: 10px 0px;
+    border: none;
+    cursor: pointer;
+    color: var(--branca);
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-size: 1.3em;
+}
+
+#btn-continuar{
+    background-color: var(--cor03);
+}
+
+#btn-finalizar{
+    background-color: var(--cor03);
+}

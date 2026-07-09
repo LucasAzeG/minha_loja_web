@@ -165,10 +165,53 @@
     color: var(--cor03);
 }
 
-
 p {
     text-align: center;
     line-height: 0px;
     color: #000000;
     line-height: 1.5;
+}
+
+#menu a:active{
+    font-size: 1.6em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: var(--cor01);
+}
+
+/*FORMATANDO MENU DE SEÇÕES*/
+
+#secoes-produtos{
+width: 100%;
+min-height: 100px;
+background-color: var(--cor02);
+margin: 20px 0px;
+padding: 20px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+#menu-secoes{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.Ink-secao:link, .Ink-secao:visited{
+text-decoration: none;
+font-size: 1.3em;
+text-transform: uppercase;
+color: var(--branca);
+letter-spacing: 2px;
+display: inline-block;
+}
+
+.Ink-secao:hover{
+font-size: 1.4em;
+text-transform: uppercase;
+color: var(--cor03);
 }
