@@ -18,14 +18,14 @@ const menuSecoes = () =>{
     const mapSecoes = new Map ()
     //PERCORRENDO O ARRAY PRODUTO
     produtos.forEach((elem)=>{
-        //SELECIONANDO AS SEÇÔES
-        mapSecoes.set(elem.idsecao, elem)
+        //SELECIONANDO AS SEÇÔES (Corrigido para id_secao)
+        mapSecoes.set(elem.id_secao, elem)
     })
 
     //CONVERTENDO MAP EM ARRAY
     const secoesFiltrada = Array.from(mapSecoes.values())
 
-//RETORNANDO O ARRAY SELECIONADO
+    //RETORNANDO O ARRAY SELECIONADO
     return secoesFiltrada
 }
 
@@ -46,11 +46,12 @@ const carregaSecoes = () =>{
         const aMenu = document.createElement('a')
         aMenu.setAttribute('href', '#')
         aMenu.setAttribute('class', 'lnk-secao')
-        aMenu.innerHTML = elem.Secao
+        aMenu.innerHTML = elem.secao // Corrigido para secao minúsculo
 
-        aMenu.addEventListener('click',()=>{
-        evento.preventDefault()
-        montaCards(filtroProduto(elem.idSecao))
+        // Corrigido: passamos o 'evento' como parâmetro aqui
+        aMenu.addEventListener('click', (evento)=>{
+            evento.preventDefault()
+            montaCards(filtroProduto(elem.id_secao)) // Corrigido para id_secao
         })
 
         //ADICIONANDO O ELEMENTO FILHO a NO li
@@ -64,9 +65,9 @@ const carregaSecoes = () =>{
 carregaSecoes()
 
 //FUNÇÂO FILTRO PRODUTO 
-const filtroProduto = (idSecao)=>{
-    //FILTRANDO OS PRODUTOS A PARTIR DO REPETIÇÃO filter
-    return produtos.filter(elem => elem.idSecao === idSecao)
+const filtroProduto = (id_secao)=>{ // Corrigido para id_secao
+    //FILTRANDO OS PRODUTOS A PARTIR DA REPETIÇÃO filter
+    return produtos.filter(elem => elem.id_secao === id_secao) // Corrigido para id_secao
 }
 
 //FUNÇÃO MONTAR CARDS
@@ -80,37 +81,35 @@ const montaCards = (objProdutos) => {
        const divCard= document.createElement('div')
        divCard.setAttribute('class', 'card')
    
-       //CRIANDO O ELEMENTO img E DEFININDO OS ATRIBUTOS SRC E ALT OS VALORES DO CAMINHO DAS IMAGENS E A DESCRIÇÂO DOS PRODUTOS
+       //CRIANDO O ELEMENTO img E DEFININDO OS ATRIBUTOS SRC E ALT
        const imgCard= document.createElement('img')
-       imgCard.setAttribute('src', elem.caminhoImagem)
-       imgCard.setAttribute('alt', elem.descricaoProduto)
+       imgCard.setAttribute('src', elem.caminho_imagem) // Corrigido
+       imgCard.setAttribute('alt', elem.nome) // Corrigido
    
        //CRIANDO O ELEMENTO p E ATRIBUINDO A DESCRIÇÃO DOS PRODUTOS 
        const pCard = document.createElement('p')
-       pCard.innerHTML = elem.descricaoProduto 
+       pCard.innerHTML = elem.nome // Corrigido
    
-         //CRIANDO O ELEMENTO h2 E ATRIBUINDO O VALOR UNITÁRIO DEIXANDO EM DUAS CASAS DECIMAIS E SUBSTITUINDO PONTO POR VÍRGULA
-         const h2Card = document.createElement('h2')
-         h2Card.innerHTML += `R$ ${parseFloat(elem.valorUnitario).toFixed (2).replace('.',',')}`
+       //CRIANDO O ELEMENTO h2 E ATRIBUINDO O VALOR UNITÁRIO
+       const h2Card = document.createElement('h2')
+       h2Card.innerHTML += `R$ ${parseFloat(elem.valor_unitario).toFixed(2).replace('.',',')}` // Corrigido
      
-         //CRIANDO O ELEMENTO button E DEFININDO OS ATRIBUTOS CLASS E A DESCRIÇÃO ADICIONAR
-         const btnCard = document.createElement('button')
-         btnCard.setAttribute('class', 'btn-add')
-         btnCard.innerHTML = 'Adicionar'
+       //CRIANDO O ELEMENTO button
+       const btnCard = document.createElement('button')
+       btnCard.setAttribute('class', 'btn-add')
+       btnCard.innerHTML = 'Adicionar'
  
+       //ADICIONANDO OS ELEMENTOS FILHOS AOS divCard
+       divCard.appendChild(imgCard)
+       divCard.appendChild(pCard)
+       divCard.appendChild(h2Card)
+       divCard.appendChild(btnCard)
  
-         //ADICIONANDO OS ELEMENTOS FILHOS AOS divCard
-         divCard.appendChild(imgCard)
-         divCard.appendChild(pCard)
-         divCard.appendChild(h2Card)
-         divCard.appendChild(btnCard)
- 
-         //ADICIONANDO O divCard A SECTION CARDS
-         sectionCards.appendChild(divCard)
+       //ADICIONANDO O divCard A SECTION CARDS
+       sectionCards.appendChild(divCard)
  
      })
  }
 
  carregaSecoes();
  montaCards(produtos);
-
