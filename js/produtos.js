@@ -10,7 +10,7 @@ const listaProdutos = () => {
 }
 
 //CHAMANDO A FUNÇÃO listarProdutos
-listarProdutos()
+listaProdutos()
 
 //MONTANDO OS MENUS SEÇÕES
 const menuSecoes = () =>{
@@ -19,7 +19,7 @@ const menuSecoes = () =>{
     //PERCORRENDO O ARRAY PRODUTO
     produtos.forEach((elem)=>{
         //SELECIONANDO AS SEÇÔES
-        mapSecoes.set(elem.idSecao, elem)
+        mapSecoes.set(elem.idsecao, elem)
     })
 
     //CONVERTENDO MAP EM ARRAY
@@ -46,9 +46,10 @@ const carregaSecoes = () =>{
         const aMenu = document.createElement('a')
         aMenu.setAttribute('href', '#')
         aMenu.setAttribute('class', 'lnk-secao')
-        aMenu.innerHTML = elem.secao
+        aMenu.innerHTML = elem.Secao
 
         aMenu.addEventListener('click',()=>{
+        evento.preventDefault()
         montaCards(filtroProduto(elem.idSecao))
         })
 
@@ -71,7 +72,7 @@ const filtroProduto = (idSecao)=>{
 //FUNÇÃO MONTAR CARDS
 const montaCards = (objProdutos) => {
     //LIMPANDO A SECTION cards
-   sectioCards.innerHTML = ''
+   sectionCards.innerHTML = ''
 
    //PERCORRENDO O ARRAY DE objProdutos
    objProdutos.forEach((elem, i)=>{
@@ -105,8 +106,11 @@ const montaCards = (objProdutos) => {
          divCard.appendChild(btnCard)
  
          //ADICIONANDO O divCard A SECTION CARDS
-         sectioCards.appendChild(divCard)
+         sectionCards.appendChild(divCard)
  
      })
  }
+
+ carregaSecoes();
+ montaCards(produtos);
 
