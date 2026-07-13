@@ -45,7 +45,7 @@ const carregaSecoes = () =>{
         //CRIANDO O ELEMENTO a ATRIBUINDO O NOME DA SEÇÃO
         const aMenu = document.createElement('a')
         aMenu.setAttribute('href', '#')
-        aMenu.setAttribute('class', 'lnk-secao')
+        aMenu.setAttribute('class', 'Ink-secao')
         aMenu.innerHTML = elem.secao // Corrigido para secao minúsculo
 
         // Corrigido: passamos o 'evento' como parâmetro aqui
@@ -69,6 +69,20 @@ const filtroProduto = (id_secao)=>{ // Corrigido para id_secao
     //FILTRANDO OS PRODUTOS A PARTIR DA REPETIÇÃO filter
     return produtos.filter(elem => elem.id_secao === id_secao) // Corrigido para id_secao
 }
+
+//CAPTURANDO O CARACTERES DO INPUT PESQUISA
+//PESQUISA O INPUT DO DOM
+const inputPesquisa = document.querySelector('#pesquisa')
+
+inputPesquisa.addEventListener('input', (evt)=>{
+    //PEGANDO O VALOR DO input E CONVERTENDO EM MINÚSCULO
+    let txtInput = evt.target.value.toLowerCase()
+
+    //FILTRANDO OS CARDS A PARTIR DO FILTER E INCLUEDES
+    montaCards(prdutos.filter(elem=> elem.descricao_produto.toLowerCase(). includes(txtInput)))
+
+    
+})
 
 //FUNÇÃO MONTAR CARDS
 const montaCards = (objProdutos) => {
