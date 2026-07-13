@@ -1,5 +1,7 @@
 //IMPORTANDO OS PRODUTOS DO ARQUIVO lista_produtos.js
 import {produtos} from './lista_produtos.js'
+//IMPORTANDO A FUNÇÃO PARA ADICIONAR ITENS AO CARRINHO DO ARQUIVO carrinho.js ao ARQUIVO lista_produtos.js
+import { addItem } from './carrinho.js'
 
 //PEGANDO ELEMENTOS DO DOM
 const sectionCards = document.querySelector('#cards')
@@ -37,6 +39,24 @@ const carregaSecoes = () =>{
     //LIMPANDO O ELEMENTO DO DOM 
     ulMenuSecoes.innerHTML = ''
 
+    //  CRIANDO A OPÇÃO "TODOS"
+    const liTodos = document.createElement('li')
+    const aTodos = document.createElement('a')
+    aTodos.setAttribute('href', '#')
+    aTodos.setAttribute('class', 'Ink-secao')
+    aTodos.innerHTML = 'Todos' 
+
+    // Adicionando o evento de clique para mostrar todos os produtos
+    aTodos.addEventListener('click', (evento)=>{
+        evento.preventDefault()
+        montaCards(produtos) 
+    })
+
+    liTodos.appendChild(aTodos)
+    ulMenuSecoes.appendChild(liTodos)
+    // ---
+     
+
     //CHAMANDO A FUNÇÂO menuSecoes E PERCORRENDO O ARRAY DE SEÇÔES JÀ SELECIONADAS
     menuSecoes().forEach((elem, i)=>{
         //CRIANDO O ELEMENTO li
@@ -72,14 +92,14 @@ const filtroProduto = (id_secao)=>{ // Corrigido para id_secao
 
 //CAPTURANDO O CARACTERES DO INPUT PESQUISA
 //PESQUISA O INPUT DO DOM
-const inputPesquisa = document.querySelector('#pesquisa')
+const inputPesquisa = document.querySelector('.input-pesquisa')
 
 inputPesquisa.addEventListener('input', (evt)=>{
     //PEGANDO O VALOR DO input E CONVERTENDO EM MINÚSCULO
     let txtInput = evt.target.value.toLowerCase()
 
     //FILTRANDO OS CARDS A PARTIR DO FILTER E INCLUEDES
-    montaCards(prdutos.filter(elem=> elem.descricao_produto.toLowerCase(). includes(txtInput)))
+    montaCards(produtos.filter(elem=> elem.nome.toLowerCase(). includes(txtInput)))
 
     
 })
@@ -112,6 +132,9 @@ const montaCards = (objProdutos) => {
        const btnCard = document.createElement('button')
        btnCard.setAttribute('class', 'btn-add')
        btnCard.innerHTML = 'Adicionar'
+       btnCard.addEventListener('click',()=>{
+        window.location.href = 'paginas/carrinho.html'
+       })
  
        //ADICIONANDO OS ELEMENTOS FILHOS AOS divCard
        divCard.appendChild(imgCard)

@@ -5,7 +5,7 @@ const produtos = [
     nome: "Conjunto de Dados Poliédricos - Resina Celestial",
     valor_unitario: 59.90,
     unidade: "un",
-    caminho_imagem: "imagens/produtos/dados-resina-celestial.jpg",
+    caminho_imagem: "/imagens/imagem_01.jpg",
     id_secao: 1,
     secao: "Dados e Acessórios"
   },
@@ -14,7 +14,7 @@ const produtos = [
     nome: "Dado D20 Gigante (35mm) - Efeito Velvet",
     valor_unitario: 29.90,
     unidade: "un",
-    caminho_imagem: "imagens/produtos/d20-gigante-velvet.jpg",
+    caminho_imagem: "/imagens/imagem_23.webp",
     id_secao: 1,
     secao: "Dados e Acessórios"
   },
@@ -23,7 +23,7 @@ const produtos = [
     nome: "Dice Tray (Bandeja de Dados) em Couro Sintético",
     valor_unitario: 45.00,
     unidade: "un",
-    caminho_imagem: "imagens/produtos/dice-tray-couro.jpg",
+    caminho_imagem: "/imagens/imagem_24.webp",
     id_secao: 1,
     secao: "Dados e Acessórios"
   },
@@ -32,7 +32,7 @@ const produtos = [
     nome: "Dice Tower (Torre de Dados) - Castelo Medieval",
     valor_unitario: 120.00,
     unidade: "un",
-    caminho_imagem: "imagens/produtos/dice-tower-castelo.jpg",
+    caminho_imagem: "/imagens/imagem_25.webp",
     id_secao: 1,
     secao: "Dados e Acessórios"
   },
@@ -41,7 +41,7 @@ const produtos = [
     nome: "Bolsa de Dados (Dice Bag) de Veludo - Símbolo Cthulhu",
     valor_unitario: 25.00,
     unidade: "un",
-    caminho_imagem: "imagens/produtos/dice-bag-cthulhu.jpg",
+    caminho_imagem: "/imagens/imagem_26.jpg",
     id_secao: 1,
     secao: "Dados e Acessórios"
   },
@@ -50,7 +50,7 @@ const produtos = [
     nome: "Conjunto de Dados de Metal - Dragão de Bronze",
     valor_unitario: 149.90,
     unidade: "un",
-    caminho_imagem: "imagens/produtos/dados-metal-bronze.jpg",
+    caminho_imagem: "/imagens/imagem_27.webp",
     id_secao: 1,
     secao: "Dados e Acessórios"
   },
