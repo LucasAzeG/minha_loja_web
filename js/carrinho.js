@@ -1,62 +1,78 @@
-//CRIANDO O ARRAY DE ITENS DO CARRINHO
-const itensCarrinho = JSON.parse(sessionStorage.get("carrinhoSessao")) || []
-//const itensCarrinho = JSON.parse(sessionStorage.get("carrinhoSessao")) || []
+//CRIANDO O ARRAY DE ITENS DO CARRINH0
+const itensCarrinho = JSON.parse(sessionStorage.getItem("carrinhoSessao")) || []
+
+//const itensCarrinho = JSON.parse(localStorage.get('carrinhoSessao')) || []
+
+//FUNÇÃO ITEM
+const item = (objProduto) => {
+
+    const item = {
+        id_produto: objProduto.id_produto,
+        descricao_produto: objProduto.descricao_produto,
+        valor_unitario: objProduto.valor_unitario,
+        unidade: objProduto.unidade,
+        caminho_imagem: objProduto.caminho_imagem,
+        caminho_image_lixo: objProduto.caminho_image_lixo,
+        quantidade: 1,
+        /*totalItem: parseFloat(quantidade) * parseFloat(objProduto.valor_unitario)*/
+    }
+
+    return item
+
+}
+
 
 
 //FUNÇÃO PARA ADICIONAR UM ITEM
-const addItem = (objItem)=>{
-    itensCarrinho.push(objItem)
+const addItem = (objItem) => {
+    itensCarrinho.push(item(objItem))
 
-    sessionStorage.setItem('carrinhoSecao', JSON.stringify(itensCarrinho))
-
-    listItens ()
+    sessionStorage.setItem('carrinhoSessao', JSON.stringify(itensCarrinho))
+    //localStorage.setItem('carrinhoSessao', JSON.stringify(itensCarrinho))
 }
 
 //FUNÇÃO PARA LISTAR OS ITENS DO CARRINHO
-const listItens = ()=>{
-    const listaItens = JSON.parse(sessionStorge.getItem('carrinhoSessao'))
+const listItens = () => {
+    const listaItens = JSON.parse(sessionStorage.getItem('carrinhoSessao')) || []
 
-    montaTelaCarrinho(listItens)
+    //const itensCarrinho2 = JSON.parse(localStorage.get('carrinhoSessao')) || []
+
+    return listaItens
 
 }
 
-//MONTAR TELA CARRINHO
-const montaTelaCarrinho = (objListaItens)=>{
-    const sectionItensCarrinho = document.querySelector(`#itens-carrinho`)
+//FUNÇÃO REMOVER ITENS DO ARRAY
+const removeItem = (pos) =>{
+    itensCarrinho.splice(pos,1)
 
-    objListaItens.forEach((elem, i) => {
-        const sectionItem = document.createElement('section')
-        sectionItem.setAttribute('class', item)
-
-        const divImgItem = document.createElement('div')
-        divImgItem.setAttribute('class', 'img-item')
-
-        const imgItem = document.createElement('img')
-        imgItem.setAttribute('src', elem.caminho_imagem)
-        imgItem.setAttribute('alt', elem.nome)
-
-        imgItem.appendChild(imgItem)
-
-        const divDescricaoItens = document.createElement('div')
-        divDescricaoItens.setAttribute('class', 'nome-itens')
-
-        const divDescricao = document.createElement('div')
-        divDescricao.setAttribute('class', nome)
-        divDescricao.innerHTML = elem.nome 
-
-        const divValores = document.createElement('div')
-        divValores.setAttribute('class', 'valores')
-
-        const pItem = document.createElement('p')
-        pItem.innerHTML = `R$ ${parseFloat(elem. valor_unitario).toFixed (2).replace(',',',')}`
-
-        const divQuant = document.createElement('div')
-
-
-    
-    })
+    sessionStorage.setItem('carrinhoSessao', JSON.stringify
+    (itensCarrinho))
 }
 
 
 //EXPORTAÇÃO
-export{ addItem }
+export { addItem, listItens, removeItem }
+
+
+tela_carrinho.js:
+
+const aRemover = document.createElement('a')
+        aRemover.setAttribute('href','#')
+        aRemover.setAttribute('class', 'lnk-remover')
+        aRemover.innerHTML = `Remover`
+
+        aRemover.addEventListener('click',()=>{
+            if(confirm(`Tem certeza que deseja remover ${elem.descricao_produto}`)){
+                removeItemTela(i)
+            }
+        })
+
+        const imgRemover = document.createElement('img')
+        imgRemover.setAttribute('src', '../imagens/icone/remover.png')
+        imgRemover.setAttribute('alt', 'remover')
+
+
+        imgRemover.addEventListener('click', () => {
+            removeItem(i);
+            montaTelaCarrinho();
+        });
