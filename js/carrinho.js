@@ -8,7 +8,7 @@ const item = (objProduto) => {
 
     const item = {
         id_produto: objProduto.id_produto,
-        descricao_produto: objProduto.descricao_produto,
+        nome: objProduto.nome,
         valor_unitario: objProduto.valor_unitario,
         unidade: objProduto.unidade,
         caminho_imagem: objProduto.caminho_imagem,
@@ -52,29 +52,3 @@ const removeItem = (pos) =>{
 
 //EXPORTAÇÃO
 export { addItem, listItens, removeItem }
-
-
-tela_carrinho.js:
-
-const aRemover = document.createElement('a')
-        aRemover.setAttribute('href','#')
-        aRemover.setAttribute('class', 'lnk-remover')
-        aRemover.innerHTML = `Remover`
-
-        aRemover.addEventListener('click',()=>{
-            if(confirm(`Tem certeza que deseja remover ${elem.descricao_produto}`)){
-                removeItemTela(i)
-            }
-        })
-
-        const imgRemover = document.createElement('img')
-        imgRemover.setAttribute('src', '../imagens/icone/remover.png')
-        imgRemover.setAttribute('alt', 'remover')
-
-
-        imgRemover.addEventListener('click', () => {
-            removeItem(i);
-            montaTelaCarrinho();
-        });
-
-        export
