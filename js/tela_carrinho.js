@@ -29,16 +29,16 @@ const montaTelaCarrinho = () => {
         inputQuantidade.setAttribute('name', `quant${i}`)
         inputQuantidade.setAttribute('id', `quant${i}`)
         inputQuantidade.setAttribute('class', 'input-item')
-        inputQuantidade.setAttribute('value', elem.quantidade)
+        inputQuantidade.setAttribute('value', elem.unidade)
 
         //CALCULA TOTAL DO VALOR ACUMULADO DO ITEM
-        const subtotalItem = elem.valor_unitario * elem.quantidade
+        const subtotalItem = elem.valor_unitario * elem.unidade
         //SOMA AO VALOR TOTAL GERAL
         valorTotalCarrinho += subtotalItem
 
         const pSubTotal = document.createElement('p')
         pSubTotal.setAttribute('class', 'vlr-subtotal')
-        pSubTotal.innerHTML = `R$ ${(elem.valor_unitario * elem.quantidade).toFixed(2)}`
+        pSubTotal.innerHTML = `R$ ${(elem.valor_unitario * elem.unidade).toFixed(2)}`
 
         const aRemover = document.createElement('a')
         aRemover.setAttribute('href','#')
@@ -64,9 +64,9 @@ const montaTelaCarrinho = () => {
         
 
         divItem.appendChild(imgItem)
-        divItem.appendChild(h2nome)
+        divItem.appendChild(h2Nome)
         divItem.appendChild(pVlrUnitario)
-        divItem.appendChild(inputQuantidade)
+        divItem.appendChild(inputUnidade)
         divItem.appendChild(pSubTotal)
         divItem.appendChild(aRemover)
 
@@ -88,11 +88,9 @@ const montaTelaCarrinho = () => {
 
     //ATUALIZANDO VALORES DOS CAMPOS DA DIV
     campoValorTotal.innerHTML = `R$ ${valorTotalCarrinho.toFixed(2).replace('.', ',')}`
-    campoValorFrete.innerHTML = `R$ ${valorFrete.toFixed(2).replace('.', ',')}`
+    campoValorFrete.innerHTML = `R$ ${valorFrete.toFixed(2).replace('.',',')}`
     campoValorPagar.innerHTML = `R$ ${totalAPagar.toFixed(2).replace('.', ',')}`
 }
-
-montaTelaCarrinho()
 
 const removeItemTela = (pos) =>{
     removeItem(pos)

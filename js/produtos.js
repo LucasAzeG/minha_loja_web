@@ -1,3 +1,4 @@
+
 //IMPORTANDO OS PRODUTOS DO ARQUIVO lista_produtos.js
 import {produtos} from './lista_produtos.js'
 //IMPORTANDO A FUNÇÃO PARA ADICIONAR ITENS AO CARRINHO DO ARQUIVO carrinho.js ao ARQUIVO lista_produtos.js
